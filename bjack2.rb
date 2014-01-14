@@ -10,7 +10,7 @@ def calculate_total (cards)
 	  else
 	  	total += value.to_i
 	  end
-
+	 end
 	  arr.select {|e| e == "A"}.count.times do
 	  	if total > 21
 	  		total -= 10 
@@ -20,10 +20,6 @@ def calculate_total (cards)
 	  # if arr.include?("A") && total > 21  this function doesn't take into account multiple Aces.
 	  # 	total -= 10
 	  # end
-
-	end
-
-
 	total #this 'returns' the total.  'Return' is implied.
 end
 
