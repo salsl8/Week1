@@ -1,4 +1,4 @@
-@player_name = ''  #makes player_name a global variable to be used throughout.
+$player_name = ''  #makes player_name a global variable to be used throughout.
 
 def calculate_total (cards)
 	arr = cards.map {|e| e[1]} #map itterates through each element in the array and performs the action in the {}
@@ -35,9 +35,9 @@ end
 
 puts "Have a seat"
 puts "What\'s your name"
-@player_name = gets.chomp
+$player_name = gets.chomp
 puts ""
-puts "Welcome, #{@player_name}, glad you could join us!"
+puts "Welcome, #{$player_name}, glad you could join us!"
 puts ""
 
 #deal_cards - doesn't work as a method.
@@ -55,7 +55,7 @@ puts ""
 	dealer_total = calculate_total(dealer_hand)
 	
 	puts "The dealer is showing a  #{dealer_hand [0]}."
-	puts "#{@player_name}, you have a #{player_hand [0]} and #{player_hand[1]} for a total of #{player_total}."  
+	puts "#{$player_name}, you have a #{player_hand [0]} and #{player_hand[1]} for a total of #{player_total}."  
 
 
 # def next_card (my original code, which caused a break after puts "Please enter...")
@@ -63,7 +63,7 @@ puts ""
 
 # 	player_hand << cards.pop
 
-# 	puts "What would you like to do, #{@player_name}? Hit or Stay?"
+# 	puts "What would you like to do, #{$player_name}? Hit or Stay?"
 # 	move = gets.chomp
 # 		if move == "Hit"	
 # 			puts "You got a #{player_hand [0]}."
@@ -72,23 +72,23 @@ puts ""
 # 			deal_cards
 # 			puts "Thank you.  The dealer has a #{dealer_hand[0]} and a #{dealer_hand[1]} for a total of #{dealer_total}."
 # 		end
-# 		puts "Please enter Hit or Stay, #{@player_name}."
+# 		puts "Please enter Hit or Stay, #{$player_name}."
 
 # end
 
 puts ""
 if player_total == 21
-	puts "#{@player_name}, you got Blackjack!!!  Congratulations, you win!!"
+	puts "#{$player_name}, you got Blackjack!!!  Congratulations, you win!!"
 	exit
 end
 
 if dealer_total == 21
-	puts "Sorry, #{@player_name}, the dealer hit blackjack.  You lose."
+	puts "Sorry, #{$player_name}, the dealer hit blackjack.  You lose."
 	exit
 end
 
 while player_total < 21
-	puts "#{@player_name}, what would you like to do?  Hit or Stay?"
+	puts "#{$player_name}, what would you like to do?  Hit or Stay?"
 	hit_or_stay = gets.chomp
 
 	if !["Hit", "Stay"].include?(hit_or_stay)
@@ -97,7 +97,7 @@ while player_total < 21
 	end
 
 	if hit_or_stay == "Stay"
-		puts "#{@player_name}, you chose to stay."
+		puts "#{$player_name}, you chose to stay."
 		puts ""
 		break
 	end
@@ -112,7 +112,7 @@ puts ""
 	puts ""
 
 	if player_total > 21
-		puts "I'm sorry, #{@player_name}, you busted.  You lose."
+		puts "I'm sorry, #{$player_name}, you busted.  You lose."
 		exit
 	end
 end	
@@ -128,7 +128,7 @@ while dealer_total < 17
 	puts "The dealer's total is now: #{dealer_total}."
 	puts""
 	if dealer_total >21
-		puts "The dealer busted.  You win, #{@player_name}!"
+		puts "The dealer busted.  You win, #{$player_name}!"
 		exit
 	end			
 end
@@ -148,7 +148,7 @@ puts ""
 if dealer_total > player_total
 	puts "Sorry, the dealer won."
 elsif dealer_total < player_total
-	puts "Congratulations, #{@player_name}! You won!!!"
+	puts "Congratulations, #{$player_name}! You won!!!"
 else
 	puts "It's a push.  No winners this time."
 end
@@ -157,7 +157,7 @@ end
 # puts "Would you like to play again?"
 # answer = gets.chomp
 # 	if answer == "No" || "no"
-# 		puts "Thanks for playing #{@player_name}."
+# 		puts "Thanks for playing #{$player_name}."
 # 		exit
 	#end
 
