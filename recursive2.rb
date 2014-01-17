@@ -13,7 +13,7 @@ while true
 end
 puts 'Here are your words, in order!'
 puts first_words.sort
-
+puts
 puts 'Again, please enter as many words as you\'d like.  When you are done, press "Enter" at the next cursor.'
 
 second_words = []
@@ -55,5 +55,5 @@ end
 
  	rec_sort still_unsorted, first_words
  end
-
-puts (sort (first_words))
+puts 
+puts (sort (first_words) + (second_words))
