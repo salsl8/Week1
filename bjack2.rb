@@ -11,6 +11,7 @@ def calculate_total (cards)
 	  	total += value.to_i
 	  end
 	 end
+	  
 	  arr.select {|e| e == "A"}.count.times do
 	  	if total > 21
 	  		total -= 10 
