@@ -1,7 +1,7 @@
 puts 'Please enter a Roman numeral'
 roman = gets.chomp.upcase
 puts ''
-puts 'You entered: ' +roman 
+puts "You entered: #{roman}" 
 
 total = 0
 
